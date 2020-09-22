@@ -46,14 +46,14 @@ CREATE TABLE "%%BOARD%%_images" (
 
 
 CREATE TABLE "%%BOARD%%_daily" (
-	"" integer NOT NULL,
+	"day" integer NOT NULL,
 	"posts" integer NOT NULL,
 	"images" integer NOT NULL,
 	"sage" integer NOT NULL,
 	"anons" integer NOT NULL,
 	"trips" integer NOT NULL,
 	"names" integer NOT NULL,
-	CONSTRAINT "%%BOARD%%_daily_pk" PRIMARY KEY ("")
+	CONSTRAINT "%%BOARD%%_daily_pk" PRIMARY KEY ("day")
 ) WITH (
   OIDS=FALSE
 );
@@ -145,4 +145,3 @@ CREATE TABLE "%%BOARD%%_deleted" (
 ALTER TABLE "%%BOARD%%" ADD CONSTRAINT "%%BOARD%%_fk0" FOREIGN KEY ("media_id") REFERENCES "%%BOARD%%_images"("media_id");
 
 ALTER TABLE "%%BOARD%%_deleted" ADD CONSTRAINT "%%BOARD%%_deleted_fk0" FOREIGN KEY ("media_id") REFERENCES "%%BOARD%%_images"("media_id");
-
